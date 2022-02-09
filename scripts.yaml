@@ -1,0 +1,22 @@
+- service: mqtt.publish
+  data:
+    topic: homeassistant/light/first_test/config
+    retain: true
+    payload: >
+      {
+        "name": "first light test",
+        "state_topic": "cloudapp/QBUSMQTTGW/UL1/UL14/state",
+        "command_topic": "cloudapp/QBUSMQTTGW/UL1/UL14/setState",
+        "payload_on": "{\"id\": \"UL14\",\"type\": \"state\",\"properties\": {\"value\": true}}",
+        "payload_off": "{\"id\": \"UL14\",\"type\": \"state\",\"properties\": {\"value\": false}}",
+        "state_on": "{\"id\":\"UL44\",\"properties\":{\"value\":true},\"type\":\"event\"}",
+        "state_off": "{\"id\":\"UL44\",\"properties\":{\"value\":false},\"type\":\"event\"}",
+        "unique_id": "first_light_test",
+        "device": {
+            "identifiers": ["test_lights"],
+            "name": "first test light",
+            "model": "ABC",
+            "manufacturer": "XYZ",
+            "sw_version": "1.0"
+        }
+      }
